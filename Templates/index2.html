@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <a style="float:right" href="admin">Login</a>
+    <div class="container">
+        <div>
+            {% set i = 1 %}
+            {% for key in rulesets %}
+
+            <a href="/search/{{ key }}" class="btn btn-primary"> {{ rulesets[key]['name'] }} </a>
+                {% set i = i + 1 %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

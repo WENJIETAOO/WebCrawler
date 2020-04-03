@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Executor{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+       <form action="run" method="get" class="container form-group" style="padding:5px">
+            <div class="row">
+                <span class="col"> Ruleset </span>
+                <div class="col" style="border-style:solid;border-width:1px;border-radius:5px;height:125px;overflow:auto">
+                    {% for key in rulesets %}
+                    <input class="form-check-input" type="radio" name="Ruleset" value="{{ key }}"> {{ rulesets[key]['name'] }} <br>
+                    {% endfor %}
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <span class="col" > URL List </span>
+                <div class="col form-check" style="border-style:solid;border-width:1px;border-radius:5px;height:125px;overflow:auto">
+                    {% for key in urlsets %}
+                    <input class="form-check-input" type="radio" name="URLset" value="{{ key }}"> {{ urlsets[key]['name'] }} <br>
+                    {% endfor %}
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary">Go</button>
+        </form>
+    <a href="/admin" class="btn btn-primary">Go Back</a>
+{% endblock %}

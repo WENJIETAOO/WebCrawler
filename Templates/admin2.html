@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <a href="upload" class="btn btn-primary" >Upload Ruleset/URLset</a>
+    <a href="executor" class="btn btn-primary" >Execute Crawl</a>
+    <a href="/index" class="btn btn-primary">Go Back</a>
+{% endblock %}
